@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+header .subtitle {
+    font-size: 1.2em;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+main {
+    padding: 60px 40px;
+}
+
+.links-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.link-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.link-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.link-card:hover::before {
+    transform: translateY(0);
+}
+
+.link-card .icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.link-card .label {
+    font-size: 1em;
+}
+
+/* Individual link card colors */
+.link-card.twitter {
+    background: linear-gradient(135deg, #1DA1F2 0%, #1a91da 100%);
+}
+
+.link-card.twitter:hover {
+    background: linear-gradient(135deg, #1a91da 0%, #1679bc 100%);
+}
+
+.link-card.soundcloud {
+    background: linear-gradient(135deg, #FF6B00 0%, #e85a00 100%);
+}
+
+.link-card.soundcloud:hover {
+    background: linear-gradient(135deg, #e85a00 0%, #cc4c00 100%);
+}
+
+.link-card.discord {
+    background: linear-gradient(135deg, #5865F2 0%, #4752da 100%);
+}
+
+.link-card.discord:hover {
+    background: linear-gradient(135deg, #4752da 0%, #3a41c2 100%);
+}
+
+.link-card.flickr {
+    background: linear-gradient(135deg, #0063E5 0%, #0054cc 100%);
+}
+
+.link-card.flickr:hover {
+    background: linear-gradient(135deg, #0054cc 0%, #0044a3 100%);
+}
+
+.link-card.note {
+    background: linear-gradient(135deg, #20B783 0%, #1a9369 100%);
+}
+
+.link-card.note:hover {
+    background: linear-gradient(135deg, #1a9369 0%, #147a54 100%);
+}
+
+.link-card.bluesky {
+    background: linear-gradient(135deg, #1185FE 0%, #0d66e6 100%);
+}
+
+.link-card.bluesky:hover {
+    background: linear-gradient(135deg, #0d66e6 0%, #0a52cc 100%);
+}
+
+footer {
+    background: #f5f5f5;
+    color: #666;
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9em;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        padding: 40px 20px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header .subtitle {
+        font-size: 1em;
+    }
+
+    main {
+        padding: 40px 20px;
+    }
+
+    .links-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 20px;
+    }
+
+    .link-card {
+        padding: 20px;
+    }
+
+    .link-card .icon {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .link-card .label {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .links-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .link-card {
+        padding: 15px;
+    }
+
+    .link-card .icon {
+        font-size: 1.5em;
+    }
+
+    .link-card .label {
+        font-size: 0.8em;
+    }
+}
